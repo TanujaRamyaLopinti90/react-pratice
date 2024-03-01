@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+ </head>   
+
+<body>
+    <div id="d1"></div>
+    <script type="text/babel">
+      
+//Q-1:   Rendering React component
+
+     function Maha(){
+        return  <h1>hello world!!</h1>  
+       }
+      ReactDOM.render(<Maha></Maha>,document.getElementById("d1"))
+
+ //Q-2:    Evaluate expression in React component
+             
+          function Maha(){
+             return  <h1>{10+20}</h1>  
+       }
+        ReactDOM.render(<Maha></Maha>,document.getElementById("d1"))
+
+        // ---------------------------ALTERNATE
+        //   function Maha(){
+        //     var [a,setA]=React.useState(10)
+        //     var [b,setB]=React.useState(30)
+        //     return (
+        //         <h1>{a+b}</h1>
+        //     )
+        //   } 
+        //   ReactDOM.render(<Maha></Maha>,document.getElementById("d1"))  
+          
+  //Q-3:  Evaluate string concatenation in React component   
+          
+            function Hey(){
+            var [a,setA]=React.useState("maha")
+            var [b,setB]=React.useState("lakshmi")
+            return (
+                <h1>{a+b}</h1>//<h1>{"maha"+"lakshmi"}</h1>
+            )
+
+            }
+            ReactDOM.render(<Hey/>,document.getElementById("d1"))
+
+  //Q-4:  Evaluate logical expression in React component
+
+        function Loyal(){
+           var [a,setA]=React.useState("maha")
+           var [b,setB]=React.useState("not")
+           return (
+              //  <h1>{(false)?a:b}</h1>  //-----not
+                <h1>{(true)?a:b}</h1>
+           
+           )
+           }
+           ReactDOM.render(<Loyal/>,document.getElementById("d1"))
+
+  //Q-5:  Print array of numbers in React component 
+
+        function Hello(){
+         var [x,setX]=React.useState([10,20,30,40,50])
+           return (
+               <h1>{x.map(function(k) {
+                   return <h2>{k}</h2>
+               })}</h1>
+           )            
+        }
+        ReactDOM.render(<Hello/>,document.getElementById("d1"))
+
+   //Q-6:  Print first two character of array values in React component 
+            
+           function Ammu(){
+            var [ar,setAR]=React.useState(["prabhas","surya","pawankalyan","arjun"])
+            return (
+               <h1>{ar.map(function(a) {
+                    return  <h1>{a.slice(0,2)}</h1>
+                })}</h1>
+            )
+           }
+           ReactDOM.render(<Ammu/>,document.getElementById("d1"))
+
+   //Q-7:  Print square root of 14 in React component    
+           
+         function Ammu(){
+            return (
+              <h1>{Math.sqrt(14)}</h1> 
+            )
+           }
+           ReactDOM.render(<Ammu/>,document.getElementById("d1"))  
+           
+  //Q-8:   Print integer part of the number 134.42 in React component  
+
+       function Ammu(){
+        var [a,setA]=React.useState()
+            return (
+              <h1>{parseInt(134.42)}</h1> 
+            )
+           }
+           ReactDOM.render(<Ammu/>,document.getElementById("d1")) 
+           
+   //Q-9: Print string mahalakshmi in uppercase in React component   
+         
+   function Fantasy(){
+        var [a,setA]=React.useState("mahalakshmi")
+            return (
+              <h1>{a.toUpperCase()}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+           
+  //Q-10   Print string length of mahalakshmi in React component 
+  
+     function Fantasy(){
+          var [a,setA]=React.useState("mahalakshmi")
+             return (
+              <h1>{a.length}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))    
+           
+  //Q-11  Print reverse of string mahalakshmi in React component    
+   
+         function Fantasy(){
+          var [a,setA]=React.useState("mahalakshmi")
+             return (
+              <h1>{a.split("").reverse().join("")}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+   //Q-12   Evaluate addition of two variable values in React component        
+            
+      function Fantasy(){
+          var [a,setA]=React.useState(13)
+          var [b,setB]=React.useState(87)
+             return (
+              <h1>{a+b}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+   //Q-13    Display greatest of two variable values in React component        
+       
+     function Fantasy(){
+          var [a,setA]=React.useState(13)
+          var [b,setB]=React.useState(87)
+             return (
+              <h1>{a>b?a:b}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+  //Q-14    Display variable value is even or odd in React component   
+  
+     function Fantasy(){
+        //   var [a,setA]=React.useState(7)
+          var x=+prompt()
+          var [a,setA]=React.useState(x)
+             return (
+              <h1>{a%2===0?"even":"odd"}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+   //Q-15    Display variable value is positive or negative in React component   
+       
+   function Fantasy(){
+          var [a,setA]=React.useState(-2)
+             return (
+              <h1>{a>=0?"positive":"negative"}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+  //Q-16    Display greatest variable value of three in React component   
+  
+      function Fantasy(){
+        var x=+prompt()
+        var y=+prompt()
+        var z=+prompt()
+          var [a,setA]=React.useState(x)
+          var [b,setB]=React.useState(y)
+          var [c,setC]=React.useState(z)
+             return (
+              <h1>{a>b?(a>c?a:c):(b>c?b:c)}</h1> 
+            )
+           }
+           ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+  //Q-17    Display different elements even/odd conditionally React component 
+
+       function Fantasy(){
+        var x=+prompt()
+           var [a,setA]=React.useState(x)
+              return (
+               <h1>{a%2===0?<h1>even</h1>:<i>odd</i>}</h1> 
+            )
+            }
+            ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+  //Q-18    Display different images conditionally React component  
+    
+  function Fantasy(){
+        var x=+prompt()
+           var [a,setA]=React.useState(x)
+              return (
+               <h1><img src={a%2==0?"https://e1.pxfuel.com/desktop-wallpaper/511/522/desktop-wallpaper-87-stylish-girl-for-whatsapp-dp-pics-stylish-dp-thumbnail.jpg":"https://mixingimages.in/wp-content/uploads/2023/04/Cute-Baby-Boy-Pics.jpg"}/></h1>
+            )
+            }
+            ReactDOM.render(<Fantasy/>,document.getElementById("d1"))
+
+//Q-19:  Conditionally apply url to image in React component
+
+        // SAME AS Q-18
+
+  //Q-20:  Print array strings ol and ul in React component
+      
+         function Chance(){
+            var [a,setA]=React.useState(["hello","hey","hai"])
+            return (
+                <div>
+                    <ol>
+                        {
+                            a.map((x) => { return <li>{x}</li> })
+                        }
+                    </ol>
+                    <ul>
+                        {
+                            a.map((x) => { return <li>{x}</li> })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+
+  //Q-21   Print array strings ol of uppercase and ul of lowercase strings in React 
+  
+  function Chance(){
+            var [a,setA]=React.useState(["hello","hey","hai"])
+            return (
+                <div>
+                    <ol>
+                        {
+                            a.map((x) => { return <li>{x.toUpperCase()}</li> })
+                        }
+                    </ol>
+                    <ul>
+                        {
+                            a.map((x) => { return <li>{x.toLowerCase()}</li> })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+
+  //Q-22   Print array values in React component       
+
+  function Chance(){
+            var [a,setA]=React.useState([1,2,3,4,5,5,4,3,2,1])
+            return (
+                a.map(function(x){
+
+                   return <h1>{x}</h1>
+                })
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+
+//Q-23 Print squared array values in list items in React component
+
+     function Chance(){
+            var [a,setA]=React.useState([1,2,3,4,5,5,4,3,2,1])
+            return (
+                <ul>
+                    {
+                        a.map(function(x){
+                            return <li>{x*x}</li>
+                        })
+                    }
+                    </ul>
+            
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))  
+    
+//Q-24  Print merged array values of given two arrays in React component
+         
+        function Over(){
+            var [ar,setAr]=React.useState([1,2,3,4,5,6])
+            var [br,setBr]=React.useState([11,22,33,44,55,66])
+            return(
+                <ul>
+                    {
+                        ar.concat(br).map(function(a){
+                    return <li>{a}</li>
+                })
+                    }</ul>  
+            )
+        }
+     ReactDOM.render(<Over/>,document.getElementById("d1"))
+
+ //Q-25   Print merged array values in sorted order of given two arrays in React component   
+        
+ function Over(){
+            var [ar,setAr]=React.useState([1,2,3,9,5,6])
+            var [br,setBr]=React.useState([11,22,33,44,55,66])
+            return(
+                <ul>
+                    {
+                        ar.concat(br).sort((a,b)=>{return a>b?1:-1}).map(function(a){
+                    return <li>{a}</li>
+                })
+                    }</ul>  
+            )
+        }
+     ReactDOM.render(<Over/>,document.getElementById("d1"))
+
+//Q-26  Print only the even numbers of array of numbers in list items in React component
+ 
+           function Chance(){
+            var [a,setA]=React.useState([1,2,3,4,5,5,4,3,2,1])
+            return (
+                <ul>
+                    {
+                        a.map(function(x){
+                            return (x%2===0?<li>{x}</li>:null)
+                        })
+                    }
+                    </ul>
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+
+  //Q-27 Print only the odd numbers of array of numbers in list items in React component  
+    // same as 26- Q
+
+
+  //Q-28   Print only the numbers of array greater than 25 of numbers in list items copy in React component       
+      function Chance(){
+            var [a,setA]=React.useState([1,9,38,4,55,5,45,3,28,1])
+            return (
+                <ul>
+                    {
+                        a.map(function(x){
+                            return (x>25?<li>{x}</li>:null)
+                        })
+                    }
+                    </ul>
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+
+  //Q-29 Print even numbers in italics and odd numbers in bold in list in React component       
+
+            function Chance(){
+            var [a,setA]=React.useState([1,2,3,4,5,5,4,3,2,1])
+            return (
+                <ul>
+                    {
+                        a.map(function(x){
+                            return (x%2===0?<li><i>{x}</i></li>:<li><b>{x}</b></li>)
+                        })
+                    }
+                    </ul>
+            )
+        }
+                
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+        
+//Q-30   Print the sum of all numbers of array in React component
+ 
+      function Chance(){
+            var [a,setA]=React.useState([1,2,3,4,5,5,4,3,2,1])
+            return (
+                     <div>
+                      {
+                        a.reduce((a,b)=>
+                           {return a+b},0)
+                      } 
+                       </div>
+                        )
+        }     
+         ReactDOM.render(<Chance/>,document.getElementById("d1"))
+
+ //Q-31  Print array strings sorted order in list items in React component        
+       
+          function Terrace(){
+            var [x,setX]=React.useState(["silu","priya","anu","siri","hasi"])
+            return (
+              <ul>{
+                x.sort().map(function(a){
+                  return <li>{a.split("").reverse().join("")}</li>
+                })
+              }
+                </ul>
+            )
+          }
+          ReactDOM.render(<Terrace/>,document.getElementById("d1"))
+
+ //Q-32  Print array strings length in list items in React component
+       
+        function Happy(){
+          var [c,setC]=React.useState(["arun","ajay","arjun","aryan"])
+          return (
+            <ul>{
+              c.map(function(a){
+                return <li>{a.length}</li>
+              })
+            }
+              </ul>
+          )
+        }
+        ReactDOM.render(<Happy/>,document.getElementById("d1"))
+
+ //Q-33,34,35,36 repeated
+ //Q-37 Print array values in sorted order in list items in React component 
+ 
+ function Ash(){
+  var [a,setA]=React.useState([1,6,9,44,76,4,2,87,3])
+  return (
+        <ul>{
+              a.sort().map(function(x){
+                return <li>{x}</li>
+              })
+        }</ul>
+  )
+ }
+ ReactDOM.render(<Ash/>,document.getElementById("d1"))
+
+//Q-38  Print flatten array of Multi-dimensional array in React component
+
+function Ash(){
+  var [a,setA]=React.useState([1,[6,9],[76,[4,8]]])
+  return (
+        <ul>{
+              a.map(function(x){
+                return <li>{x}</li>
+              })
+        }</ul>
+  )
+ }
+ ReactDOM.render(<Ash/>,document.getElementById("d1"))
+
+ //Q-39,40,41,42,43 repeated

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+</head>
+<body>
+    <h1 class="a">Change the backgroundColor on click button </h1>
+  <div class=  "a"></div>  
+    <div id="d1" style=" height:100px;width:100px; border:2px solid;background-color: white;border-radius:5px;"></div>
+    <br>
+<div>
+    <button id="a" onclick="ab()" style="background-color: yellow;" >ON</button>
+    <button id="b" onclick="cd()" style="background-color: yellow;">OFF</button>
+</div>
+<script>
+     var x=document.getElementById("a")
+     var y=document.getElementById("b")
+     var d1=document.getElementById("d1")
+     function ab(){
+        x.style.backgroundColor="red"
+        d1.style.backgroundColor="yellow"
+        y.style.backgroundColor="green"
+     }
+     function cd(){
+        x.style.backgroundColor="green"
+        d1.style.backgroundColor=""
+        y.style.backgroundColor="red"
+
+     }
+</script>
+</body>
+</html>

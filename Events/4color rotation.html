@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1>color rotation on click</h1>
+    <div style="height:100px ;width:100px; border:2px solid" id="a1" onclick="change()"></div>
+    
+</body>
+<script>
+     var ar=["red","green","pink","yellow","orange"]
+    var a =document.getElementById("a1")
+    var count=0
+    var ar=["red","green","pink","yellow","orange"]
+        a.style.background=ar[0]
+        function change(){
+            var a=document.getElementById('a1')
+            a.style.backgroundColor=ar[count]
+            count++
+            if(count===ar.length){
+                count=0
+            }
+        }
+    
+
+</script>
+</html>

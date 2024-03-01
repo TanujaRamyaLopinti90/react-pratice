@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<body>
+ <span id="1" onclick="star(1)" style="font-size: 100px;">&#9734</span>
+ <span id="2" onclick="star(2)" style="font-size: 100px;">&#9734</span>
+ <span id="3" onclick="star(3)" style="font-size: 100px;">&#9734</span>
+ <span id="4" onclick="star(4)" style="font-size: 100px;">&#9734</span>
+ <span id="5" onclick="star(5)" style="font-size: 100px;">&#9734</span>
+ <h1>Rating:<span id="a">0
+     
+ </span></h1>
+ 
+ <script>
+    function star(e){
+        for(var i=1;i<=5;i++){
+            if(i<=e){
+                
+                document.getElementById(i).innerHTML="&#9733"
+            }
+            else{
+                document.getElementById(i).innerHTML="&#9734"
+            }
+        }
+        document.getElementById("a").innerHTML=e + "/5"
+    }
+ </script>
+ 
+</body>
+</html>

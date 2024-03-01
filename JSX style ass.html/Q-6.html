@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a1"></div>
+    <h1>Display each array object in flex boxes</h1>
+    <script type="text/babel">
+                         var y=[
+                                {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+
+                var x=<div style={{display:"flex"}}>
+                    {
+                        y.map((a)=>{
+                            return (
+                                <div style={{width:"200px",margin:"20px",border:"1px solid",padding:"20px"}} >
+                                <h1>firstname:{a.firstname}</h1>
+                                <h1>lastName:{a.lastName}</h1>
+                                <h1>age{a.age}</h1>
+                                <h1>gender{a.gender}</h1>
+                                <h1>city{a.city}</h1>
+                                <h1>salary{a.salary}</h1>
+                                </div>
+                            )
+
+                        })
+                    }
+                    </div>
+
+
+        ReactDOM.render(x,document.getElementById("a1"))
+
+    </script>
+</body>
+</html>
+
+<!-- Display each array object in flex boxes -->

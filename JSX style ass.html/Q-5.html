@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+    <h1>Display each object properties</h1>
+
+    <div id="a"></div>
+    <script type="text/babel">
+        var obj={
+            firstname:"tanuja",
+                 age :"22",
+                place:"hyd",
+                Gender:"female"
+
+        } 
+        var jh1 = <div style={{border:'3px solid',margin:'20px',padding:"10px"}}>
+                  <h1>Name:{obj.firstname}</h1>
+                  <h1>Gender:{obj.Gender}</h1>
+                  <h1>place:{obj.place}</h1>
+                  <h1>Age:{obj.age}</h1>
+                </div>
+
+      ReactDOM.render(jh1,document.getElementById("a"))
+
+    </script>
+</body>
+</html>
+<!-- Display each object properties -->

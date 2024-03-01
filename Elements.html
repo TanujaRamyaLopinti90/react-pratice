@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+    <div id="d5"></div>
+    <script type="text/babel">
+
+      var dm1=document.createElement("h1")
+      dm1.innerHTML="Welcome to Dom"
+      dm1.style.color="pink"
+      document.getElementById("d1").appendChild(dm1)
+
+        var nh1=React.createElement("h1",{style:{color:"green"}},"Welcome to React")
+        ReactDOM.render(nh1,document.getElementById("d2"))
+    
+         var jn1=<h1 style={{color:"red"}} >Welcome to jsx</h1>
+         ReactDOM.render(jn1,document.getElementById("d3"))
+
+        // use the Elements direct in jsx
+         var friends=["tanu","peter","maha","bindu","sravani"]
+          var x=<ul>
+              {
+                friends.map(function(a){
+                    return (
+                        <li>{a}</li>
+                    )
+                })
+              }
+            
+            
+            </ul>
+           ReactDOM.render(x,document.getElementById("d4"))
+           
+           var students=[
+               {fullName:"roshika",
+                 Rollno :"1",
+                   age :"20",
+                gender :"female"
+             } ,
+               { 
+                fullName:"geyash",
+                 Rollno:"2",
+                   age :"21",
+                gender :"male"
+               }, 
+              {
+                fullName:"Nina",
+                 Rollno:"3",
+                   age :"21",
+                gender :"female"
+              },
+              {
+                fullName:"vihan",
+                 Rollno:"4",
+                   age :"20",
+                gender :"female"
+              },
+              {
+                fullName:"Ramya",
+                 Rollno:"5",
+                   age :"22",
+                gender :"female"
+              }  
+           ]
+    
+            
+            
+
+
+
+            
+            
+            
+            
+            
+        
+           
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+      <div id="d1"></div>
+  <script type="text/babel">
+
+
+    //  11.Display text box value in h1 on button click -->
+
+        // function zx(){
+        //   document.getElementById("dd").innerHTML=document.getElementById("b1").value
+        // }
+        // var nh1=<div>
+        //        <input type="text" id="b1"/>
+        //        <button onClick={zx}>click here</button>
+        //        <h1 id="dd"></h1>
+        //     </div>
+        //     ReactDOM.render(nh1,document.getElementById("a1"))
+    
+
+//  <!-- 12.Display text box value in uppercase h1 on button click -->
+  
+//      function tanu(){
+//     document.getElementById("a").innerHTML=document.getElementById("k").value.toUpperCase()
+//      }
+//      var jh1=<div>
+//             <input type="text" id="k"/>
+//             <button onClick={tanu}>click here</button>
+//             <h1 id="a"></h1>
+//         </div>
+//         ReactDOM.render(jh1,document.getElementById("d1"))
+//   
+//   13.Display text box value in uppercase h1 on textbox keyup
+
+    // function abc (){
+    //     document.getElementById("h1").innerHTML=document.getElementById("b1").value
+    // } 
+    // var x=<div>
+    //       <input type="text" id="b1" onKeyUp={abc}/>
+    //       <h1 id="h1"></h1>
+    //     </div>
+    //     ReactDOM.render(x,document.getElementById("d1"))
+  
+//  14.Display text box value in uppercase h1 on textbox blur
+   
+    //  function abc(){
+    //   document.getElementById("a1").innerHTML=document.getElementById("h1").value.toUpperCase()
+    //  }
+    // var x=<div>
+    //        <input type="text" id="h1" onBlur={abc}/>
+    //        <h1 id="a1"></h1>
+    //     </div>
+    //     ReactDOM.render(x,document.getElementById("d1"))
+
+    // 15.Display text box value in h1 on textbox keyup event
+
+//       function xya(){
+//    document.getElementById("a1").innerHTML=document.getElementById("a").value
+//       }
+//       var y=<div>
+//                <input type="text" id="a" onKeyUp={xya}/>
+//                <h1 id="a1"></h1>
+//         </div>
+//         ReactDOM.render(y,document.getElementById("d1"))
+
+//   16.Reset the textbox text on a button click
+
+    //      function Reset(){
+    //       document.getElementById("s").innerHTML="";
+    //       document.getElementById("dd").value=""
+    //      }
+    //   var nj1=<div>
+    //          <input type="text" id="dd"/>
+    //          <h1 id="s"></h1>
+    //          <button onClick={Reset}>Reset</button>
+    //     </div>
+    // ReactDOM.render(nj1,document.getElementById("d1"))
+
+    // 17.Display addition of two text box values in h1 on textbox on button click
+    //  function abc(){
+    //    var a =+document.getElementById("p1").value
+    //    var b =+document.getElementById("p2").value
+    //    document.getElementById("s").innerHTML=a+b
+    //  }
+    //    var hj1=<div>
+    //               <input type="text" id="p1"/><br/>
+    //               <input type="text" id="p2"/><br/>
+    //               <h1 id="s"></h1>
+    //               <br/>
+    //               <button onClick={abc}>ADD</button>
+    //     </div>
+    //        ReactDOM.render(hj1,document.getElementById("d1"))
+
+//   18.Display substraction of two text box values in h1 on textbox on button click
+
+//   function abc(){
+//   var a=+document.getElementById("a1").value
+//   var b=+document.getElementById("a2").value
+//   document.getElementById("dd").innerHTML=a-b
+//   }
+//     var nh1=<div>
+//                <input type="text" id="a1"/><br/>
+//                <input type="text" id="a2"/><br/>
+//                <h1 id="dd"></h1>
+//                <br/>
+//                <button onClick={abc}>SUB</button>
+//         </div>
+//       ReactDOM.render(nh1,document.getElementById("d1"))
+
+// 19.Display result of two text box values in h1 on textbox on multiplication and division buttons
+//  function xyz (){
+//   var a=document.getElementById("b1").value
+//   var b=document.getElementById("b2").value
+//    document.getElementById("d").innerHTML=a*b
+//  }
+//  function abc (){
+//   var a=document.getElementById("b1").value
+//   var b=document.getElementById("b2").value
+//    document.getElementById("d").innerHTML=a/b
+//  }
+//  var x=<div>
+//           <input type="text" id="b1"/><br/>
+//           <input type="text" id="b2"/><br/>
+//           <h1 id="d"></h1>
+//           <br/>
+//           <button onClick={xyz}>MUL</button>
+//           <button onClick={abc}>DIV</button>
+
+
+//     </div>
+//     ReactDOM.render(x,document.getElementById("d1"))
+
+// 20.Display radio button value on check
+    function abc (e){
+    document.getElementById("dd").innerHTML=e.target.value
+    }
+
+  var a=<div>
+          <input  type="radio" value="ROSHIKA"  onChange={abc}/>GIRL
+          <input  type="radio" value="GEYASH"  onChange={abc}/>BOY
+          <h1 id="dd"></h1>
+    </div>
+    ReactDOM.render(a,document.getElementById("d1"))
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    </head>
+    <body style="text-align: center;">
+        <div>
+            <h1>Add contact card with crud operations and sorting</h1>
+        </div>
+        <div>
+            <label>Name:</label>
+            <input type="text" id="pname"><br><br>
+            <label>Number:</label>
+            <input type="number" id="pnum"><br><br>
+            <label>Email:</label>
+            <input type="email" id="mail"><br><br>
+            <label>Image URL:</label>
+            <input type="text" id="img"><br><br>
+            <button onclick="addcontact()" style="background-color: aqua;" id="adbtn">ADD CONTACT</button>
+            <span id="srt"></span>
+            <span id="srt2"></span>
+            <input id="srch" placeholder="search for contact">
+        
+            
+        </div>
+    
+        <div id="mdiv">
+    
+        </div>
+        <script>
+            var srt=document.getElementById("srt")
+            var srt2=document.getElementById("srt2")
+             var mdiv=document.getElementById("mdiv")
+             var adbtn=document.getElementById("adbtn")
+             var srch=document.getElementById("srch")
+             
+    
+            var Ename=document.getElementById("pname")
+            var Enum=document.getElementById("pnum")
+            var Email=document.getElementById("mail")
+            var Eimg=document.getElementById("img")
+
+        //   to create ascending
+
+            srt.classList.add("bi")
+            srt.classList.add("bi-sort-alpha-down")
+            srt.style.color="red"
+            srt.style.fontsize="25px"
+          
+            srt2.classList.add("bi")
+            srt2.classList.add("bi-sort-alpha-up")
+            srt2.style.color="red"
+            srt2.style.fontsize="25px"
+        
+
+            
+
+            srt.onclick=function srt(){
+                array.sort(function(a,b){
+                    if(a.cname.toLowerCase()> b.cname.toLowerCase()){
+                     return 1
+                    }
+                    else{
+                        return -1
+                    }
+                })
+                createcard(array)
+            
+            }
+            
+         srt2.onclick=function srt2(){
+                array.sort(function(a,b){
+                    if(a.cname.toLowerCase()< b.cname.toLowerCase()){
+                     return 1
+                    }
+                    else{
+                        return -1
+                    }
+                })
+                createcard(array)
+            
+            }
+            
+         srch.onkeyup=function(){
+           var filterAr= array.filter(function(a){
+
+              return a.cname.toLowerCase().startsWith(srch.value.toLowerCase())
+            })
+            createcard( filterAr)
+         }
+        
+            
+        
+            
+         
+
+            // global variable here
+        
+            var array=[]
+            var currentindex;
+
+    //function to add contacts
+    
+            function addcontact(){
+                if(adbtn.innerHTML==="ADD CONTACT"){
+
+                var obj={
+                    cname:Ename.value,
+                    cnum:Enum.value,
+                    cemail:Email.value,
+                    cimg:Eimg.value
+                }
+                array.push(obj)
+                // console.log(array) //shows contacts on array
+    
+                createcard(array)
+            }
+          
+           else {
+             var newobj={
+                cname:Ename.value,
+                cnum:Enum.value,
+                cemail:Email.value,
+                cimg:Eimg.value
+             }
+            array[currentindex]=newobj
+            createcard(array)
+            adbtn.innerHTML="ADD CONTACT"
+
+
+           }
+
+        } 
+          
+              
+      //function to create a card
+              function createcard(arr){
+                mdiv.innerHTML="";
+               arr.forEach(function(a,index){
+                  var carddiv=document.createElement("div")
+                  carddiv.style.border="2px solid blue"
+                  carddiv.style.backgroundColor="yellow"
+                  carddiv.style.height="200px"
+                  carddiv.style.width='200px'
+                  carddiv.style.padding='10px'
+                  carddiv.style.position="relative"
+    
+                  mdiv.appendChild(carddiv)
+    //add delete symbol                   
+                  var delbtn=document.createElement("span")
+                  delbtn.classList.add("bi")
+                  delbtn.classList.add("bi-x-square")
+                  delbtn.style.position="absolute"
+                  delbtn.style.top="10px"
+                  delbtn.style.right="10px"
+    
+                  carddiv.appendChild(delbtn)
+    //giving functionality to delbtn
+                  delbtn.onclick=function(){
+                    var confirmbtn=confirm("Are you sure")
+                    if(confirmbtn){
+                        arr.splice(index,1)
+                        createcard(arr)
+                        console.log(arr)
+                    }
+                  }
+    //create image
+                  var dimg=document.createElement("img")
+                  dimg.src=a.cimg
+                  dimg.style.borderRadius="50%"
+                  dimg.style.height="50px"
+                  dimg.style.width="50px"
+    
+                  carddiv.appendChild(dimg)
+    // //function to delete symbol
+    //               delbtn.onclick=function(){
+    //                 arr.splice(index,1)
+    //             //   console.log(arr)shows array
+    
+    //                 createcard(arr)
+    
+                //   }
+    //create  name in div
+                  var dname=document.createElement("p")
+                  dname.innerHTML=a.cname
+                  dname.style.color="red"
+    
+                  carddiv.appendChild(dname)
+     //create num in div
+                 var dnum=document.createElement("p")
+                 dnum.innerHTML=a.cnum
+                 dnum.style.color="red"
+    
+                  carddiv.appendChild(dnum)  
+    //to create mail in div              
+                 var demail=document.createElement("p")
+                 demail.innerHTML=a.cemail
+                 demail.style.color="red"
+                 carddiv.appendChild(demail) 
+
+    //   to create edit button
+    var editbtn=document.createElement("button")
+          editbtn.innerHTML="Edit"
+          editbtn.style.backgroundColor="blue"
+          editbtn.style.borderRadius="5px"
+          editbtn.style.color="white"
+          editbtn.style.position="absolute"
+          editbtn.style.bottom="10px"
+          editbtn.style.right="10px"
+
+          editbtn.onclick=function(){
+            currentindex=index
+            Ename.value=a.cname
+            Enum.value=a.cnum
+            Email.value=a.cemail
+            Eimg.value=a.cimg
+
+            adbtn.innerHTML="save contact"
+             
+          }
+
+          carddiv.appendChild(editbtn)
+    
+     
+    //append child div to main parent div
+                  mdiv.appendChild(carddiv)
+    
+    
+    
+    
+            
+              }) 
+    
+            }
+        </script>
+    
+
+
+    
+</body>
+</html>

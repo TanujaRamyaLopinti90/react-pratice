@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="e"></div>
+    <script type="text/babel">
+                           var x=[
+                     {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+
+        var nh1=<h1></h1>
+        var maleimage="https://icon-library.com/images/male-icon-vector/male-icon-vector-2.jpg"
+        var femaleimage="https://icons.iconarchive.com/icons/icons8/ios7/512/Users-User-Female-icon.png"
+        {
+                        y.map((a)=>{
+                            return (
+                 <div style={{width:'400px',display:'flex',border:'1px solid',alignContent:'start'}}>
+                  <div style={{width:"150px",padding:'10px',margin:'10px'}}>
+
+                                <div style={{width:"200px",margin:"20px",border:"1px solid",padding:"20px"}} >
+                                <h3>firstname:{a.firstname}</h3>
+                                <h3>lastName:{a.lastName}</h3>
+                                <h3>age{a.age}</h3>
+                                <h3>gender{a.gender}</h3>
+                                <h3>city{a.city}</h3>
+                                <h3>salary{a.salary}</h3>
+                                </div>
+                            )
+
+                        
+                    
+                    </div>
+                </div>
+                })
+            
+        }
+
+        ReactDOM.render(nh1,document.getElementById("e"))
+            
+    </script>
+
+</body>
+</html>
+Display each array object in flex boxes with respective gender images

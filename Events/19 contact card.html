@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="text-align: center;">
+    <h1 style="color:red">Add Contact</h1>
+
+    <div>
+    <label>Name</label>
+    <input type="text" id="n1">
+    <br>
+    <br>
+    <label>Number</label>
+    <input type="text" id="N1">
+    <br>
+    <br>
+    <label>Email</label>
+    <input type="text" id="m1">
+    <br>
+    <br>
+    <label>Enter imge url</label>
+    <input type="text" id="il">
+
+    <br>
+    <br>
+
+    <button onclick="addCard()">Add Contact</button>
+</div>
+
+<div id="cardsContainer" style="display:flex;flex-wrap: wrap; text-align: center;">
+
+</div>
+  <script>
+    var personArr=[]
+    var cardsContainerE1=document.getElementById("cardcontainer")
+    var nameE1= document.getElementById("n1")
+    var numE1=document.getElementById("N1")
+    var mailE1=document.getElementById("m1")
+    var imgE1=document.getElementById("il")
+
+    function addCard(){
+        var perobj={
+            name:nameE1.value,
+            number:numE1.value,
+            emailId:mailE1.value,
+            image:imgE1.value
+        }
+
+       personArr.push(perobj)
+    // console.log(personArr) 
+    createCard(personArr)
+
+    }
+   
+
+    function createCard(personArr){
+
+        cardsContainerE1.innerHTML=""
+        personArr.forEach(function(eachperson){
+
+        }) 
+            
+        
+        var eachcard=document.createElement("div")
+        eachcard.style.border="2px solid red"
+        eachcard.style.borderRadius="5%"
+        eachcard.style.margin="5px"
+        eachcard.style.textAlign="center"
+        eachcard.style.backgroundColor="goldenrod"
+        eachcard.style.padding="10px"
+
+
+        var imgE1=document.createElement("img")
+        imgE1.src=eachperson.image
+        imgE1.style.width="50%"
+        imgE1.style.height="50%"
+        imgE1.style.borderRadius="50%"
+        imgE1.style.alignSelf="center"
+        eachcard.appendChild(imgE1)
+        var newbr=document.createElement("br")  
+        eachcard.appendChild(newbr)  
+
+        var name1b1=document.createElement("label")
+        name1b1.innerHTML="Name:"
+        // eachcard.appendChild(name1b1)
+        
+        var nameE1=document.createElement("span")
+        nameE1.innerHTML=eachperson.name
+        eachcard.appendChild(nameE1)
+        eachcard.appendChild(name1b1)
+
+        
+        var newbr=document.createElement("br")
+        eachcard.appendChild(newbr)
+
+        var num1b1=document.createElement("label")
+        num1b1.innerHTML="num"
+        eachcard.appendChild(num1b1)
+
+        var numberE1=document.createElement("span")
+        numberE1.innerHTML=eachperson.number
+        eachcard.appendChild(num1b1)
+        eachcard.appendChild(numberE1)
+
+        var newbr=document.createElement("br")
+        eachcard.appendChild(newbr)
+
+        // eachcard.appendChild(newbr)
+
+        var email1b1=document.createElement("label")
+        email1b1.innerHTML="Email"
+        eachcard.appendChild(email1b1)
+
+        var cardemailE1=document.createElement("span")
+        cardemailE1.innerHTML=eachperson.emailId
+        eachcard.appendChild(cardemailE1)
+
+        var newbr=document.createElement("br")
+        eachcard.appendChild(newbr)
+
+        cardsContainerE1.appendChild(eachcard)
+        eachcard.appendChild(email1b1)
+        eachcard.appendChild(cardemailE1)
+
+        var newbr=document.createElement("br")
+        eachcard.appendChild(newbr)
+
+        cardsContainerE1.appendChild(eachcard)
+
+
+
+
+
+    }
+
+
+
+  </script>
+
+
+
+
+
+</body>
+</html>

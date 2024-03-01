@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head> 
+<body>
+     <div style="height:100px ;width:100px; border:2px solid" onclick="abc()" id="a1">Iam Nothing</div>
+    <button onclick="abc()" id="a1">true/false</button>
+    <script>
+        var x=document.getElementById("a1")
+        function abc(){
+            if(x.innerHTML==="Iam Nothing"){
+                x.innerHTML="true"
+            }
+            
+            else if (x.innerHTML==="true"){
+                x.innerHTML="false"
+            }
+            
+            else if (x.innerHTML==="false"){
+                x.innerHTML="true"
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

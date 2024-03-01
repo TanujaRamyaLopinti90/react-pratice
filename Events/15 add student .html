@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    
+    <h1 style="color: rgb(255, 0, 187);">Add Students</h1>
+    <input type="text" style="background-color: cadetblue;" id="b1">
+    <button  onclick="abc()" style="background-color: red;">Add student</button>
+    
+    <ul id="a1"></ul>
+  <script>
+     var a=document.getElementById("a1")
+     var  b=document.getElementById("b1")
+
+        var array=[];
+
+     function abc(){
+        a.innerHTML=""
+        array.push(b.value)
+
+        array.forEach(function(ar){
+            var li=document.createElement("li")
+            li.innerHTML=ar
+            a.appendChild(li)
+        })
+
+     }
+
+  </script>
+
+
+
+</body>
+</html>

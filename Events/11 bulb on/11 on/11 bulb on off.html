@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+</head>
+<body style="text-align: center">
+    <h1>show bulb on off image using toggle button</h1>
+    <img id="p1" src="https://i.pinimg.com/474x/a9/06/d1/a906d1d70b8246e6feff0e67c3be256d.jpg">
+    <div style="text-align: center">
+    <button onclick="bulbChange()" id="b1" style="background-color:orange">on</button>
+    </div>
+    <script>
+        var btn=document.getElementById("b1")
+        var pic=document.getElementById("p1")
+
+        function bulbChange(){
+        if(btn.innerHTML==="on"){
+            pic.src= "https://www.freeiconspng.com/thumbs/lightbulb-png/light-bulb-png-bulb-png1247-12.png"
+            btn.innerHTML="off"
+        }
+        else{
+            btn.innerHTML="on"
+             pic.src="https://i.pinimg.com/474x/a9/06/d1/a906d1d70b8246e6feff0e67c3be256d.jpg"
+        
+        }
+    }
+    
+    </script>
+</body>
+</html> 
